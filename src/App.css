@@ -32,7 +32,9 @@
 }
 
 .App-search-5 {
-  width: 70% !important;
+  width: 100% !important;
+  margin-left: 10% !important;
+  margin-right: auto !important;
 }
 
 .logoIcon {
@@ -43,7 +45,7 @@
 
 @media (min-width: 600px) 
 {.logoIcon {
-  padding-right: 50px;
+  margin-right: 50px;
 }
 }
 
@@ -53,4 +55,10 @@
 
 .MuiSvgIcon-root-61 {
   fill: #342C2C !important;
+}
+.MuiButtonBase-root-86:hover {
+  background-color: #282c34
+}
+.MuiToolbar-gutters-54 {
+  padding: 0 !important;
 }

@@ -19,6 +19,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import Logo from './static/ratingNgLogo.svg';
 import './App.css';
 import RatingDrawer from './drawer';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
   root: {
@@ -45,7 +47,7 @@ const styles = theme => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing.unit * 2,
+
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -54,18 +56,18 @@ const styles = theme => ({
     },
   },
   searchIcon: {
-    width: theme.spacing.unit * 9,
+    width: "45px !important",
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#9B9B9B',
+    color: 'white',
   },
   inputRoot: {
     color: '#9B9B9B',
-    width: '100%',
+    width: '75%',
     border: "1px #EFEDEF solid",
     borderRadius: "4px",
   },
@@ -73,12 +75,9 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit,
     paddingRight: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit * 10,
+    paddingLeft: "20px",
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200,
-    },
   },
   sectionDesktop: {
     display: 'none',
@@ -97,6 +96,26 @@ const styles = theme => ({
   },
   iconColor: {
     color: '#342C2C',
+  },
+  button: {
+    backgroundColor: "#ea4335",
+    marginLeft: "10px",
+    padding: "0px",
+    width: "5%",
+    minWidth: "40px",
+    maxWidth: "75px",
+    '&:hover': {
+      backgroundColor: "#A22C22",
+    },
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit,
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
+  iconSmall: {
+    fontSize: 20,
   },
 });
 
@@ -185,10 +204,7 @@ class App extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               <img src={Logo} alt="Logo" className="logoIcon"/>
             </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
+            <div className={classes.search} style={{display:"inlineBlock"}}>
               <InputBase
                 placeholder="Search"
                 classes={{
@@ -196,6 +212,13 @@ class App extends React.Component {
                   input: classes.inputInput,
                 }}
               />
+              <Button variant="contained" className={classes.button}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+        {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
+        <Icon className={classes.rightIcon}></Icon>
+      </Button>
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
