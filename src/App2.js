@@ -251,6 +251,13 @@ class App extends React.Component {
               <img src={Logo} alt="Logo" className="logoIcon"/>
             </Typography>
             <div className={classes.search} style={{display:"inlineBlock"}}>
+              {/* <InputBase
+                placeholder="Search"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+              /> */}
 
               <Autosuggest
           suggestions={suggestions}

@@ -21,8 +21,7 @@ import './App.css';
 import RatingDrawer from './drawer';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import Autosuggest from 'react-autosuggest';
-import axios from 'axios';
+
 
 const styles = theme => ({
   root: {
@@ -104,7 +103,7 @@ const styles = theme => ({
     marginLeft: "10px",
     padding: "0px",
     width: "5%",
-    minWidth: "40px",
+    minWidth: "32px",
     maxWidth: "75px",
     '&:hover': {
       backgroundColor: "#A22C22",
@@ -125,45 +124,7 @@ class App extends React.Component {
   state = {
     anchorEl: null,
     mobileMoreAnchorEl: null,
-    value: '',
-    suggestions: []
   };
-
-  renderSuggestion = suggestion => {
-    return (
-      <div className="result">
-        <div>{suggestion.name}</div>
-        {/* <div className="shortCode">{capitalizeFirstLetter(suggestion.City.name)}, {suggestion.State.name} state</div> */}
-      </div>
-    )
-  }
-   getSuggestionValue = suggestion => {
-       console.log('got im',suggestion )
-   
-       return suggestion.name;
-    
-    }
-
-  onChange = (event, { newValue }) => {
-    this.setState({ value: newValue })
-  }
-
-  onSuggestionsFetchRequested = ({ value }) => {
-    // axios
-    //   .post('/api/offering/search/names', {
-    //    name:this.state.value
-    //   })
-    //   .then(res => {
-    //     this.setState({ suggestions: res.data })
-    //   })
-    return [{
-      name: "University of CA"
-    }]
-  }
-
-  onSuggestionsClearRequested = () => {
-    this.setState({ suggestions: [] })
-  }
 
   handleProfileMenuOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
@@ -187,12 +148,6 @@ class App extends React.Component {
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-    const { value, suggestions } = this.state
-        const inputProps = {
-            placeholder: 'name of company, store product...',
-            value,
-            onChange: this.onChange
-          }
 
     const renderMenu = (
       <Menu
@@ -251,15 +206,13 @@ class App extends React.Component {
               <img src={Logo} alt="Logo" className="logoIcon"/>
             </Typography>
             <div className={classes.search} style={{display:"inlineBlock"}}>
-
-              <Autosuggest
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-          getSuggestionValue={this.getSuggestionValue}
-          renderSuggestion={this.renderSuggestion}
-          inputProps={inputProps}
-        />
+              <InputBase
+                placeholder="Search"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+              />
               <Button variant="contained" className={classes.button}>
               <div className={classes.searchIcon}>
                 <SearchIcon />

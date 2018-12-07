@@ -23,8 +23,14 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Autosuggest from 'react-autosuggest';
 import axios from 'axios';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+  },
   root: {
     width: '100%',
     background: 'pink',
@@ -250,9 +256,11 @@ class App extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               <img src={Logo} alt="Logo" className="logoIcon"/>
             </Typography>
-            <div className={classes.search} style={{display:"inlineBlock"}}>
+            <div className={classes.root}>
+      <Grid container spacing={1}>
+        <Grid item xs={9}>
 
-              <Autosuggest
+          <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
@@ -260,14 +268,20 @@ class App extends React.Component {
           renderSuggestion={this.renderSuggestion}
           inputProps={inputProps}
         />
-              <Button variant="contained" className={classes.button}>
+        </Grid>
+        <Grid item xs={3}>
+
+          <Button variant="contained" className={classes.button}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
         {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
         <Icon className={classes.rightIcon}></Icon>
       </Button>
-            </div>
+
+        </Grid>
+        </Grid> </div>
+          
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton className={classes.iconColor}>
