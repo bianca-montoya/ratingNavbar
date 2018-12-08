@@ -27,7 +27,6 @@ import axios from 'axios';
 const styles = theme => ({
   root: {
     width: '100%',
-    background: 'pink',
   },
   grow: {
     flexGrow: 1,
@@ -58,7 +57,8 @@ const styles = theme => ({
     },
   },
   searchIcon: {
-    width: "45px !important",
+    width: "100px",
+    fontSize: "15px !important",
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
@@ -66,6 +66,7 @@ const styles = theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     color: 'white',
+    padding: 0,
   },
   inputRoot: {
     color: '#9B9B9B',
@@ -263,6 +264,13 @@ class App extends React.Component {
               <Button variant="contained" className={classes.button}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
+              </div>
+        {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
+        <Icon className={classes.rightIcon}></Icon>
+      </Button>
+      <Button variant="contained" className={classes.button} className="sign-up">
+              <div className={classes.searchIcon} >
+                Sign Up
               </div>
         {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
         <Icon className={classes.rightIcon}></Icon>

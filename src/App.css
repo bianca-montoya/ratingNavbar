@@ -40,8 +40,6 @@
 
 .logoIcon {
   width: 110px;
-  padding-right: 20px;
-  padding-top: 10px;
 }
 
 @media (min-width: 600px) 
@@ -77,10 +75,10 @@
   margin-top: 1rem;
   background: #FFFFFF;
   border-radius: 4px;
-  font-size: 1.05rem;
+  font-size: 15px;
   font-weight: 200;
   color: #000000 !important;
-  padding: .75rem;
+  padding: 15px;
   border: 1px solid #e4e4e4;
   display: inline-block;
   float: none;
@@ -163,4 +161,40 @@
 {.App-button-13 {
   margin-right: 20px !important;
 }
+}
+
+.sign-up {
+  color: #fff;
+  background-color: #ea4335 !important;
+  border-color: #ea4335 !important;
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,.13);
+  border-radius: 4px;
+  font-size: 1.25rem !important;
+  height: 41px;
+  width: 100px;
+  outline: none;
+  font-family: Mukta Vaani,sans-serif;
+  text-transform: none !important;
+}
+.MuiTypography-root-112 {
+  font-size: 15px !important;
+}
+
+.MuiList-root-503  {
+  font-size: 15px !important;
+}
+.MuiList-root-188 {
+  font-size: 15px !important;
+}
+.MuiBadge-badge-163 {
+  font-size: 11px !important;
+}
+
+li {
+  font-size: 15px !important;
+}
+
+.MuiBadge-colorSecondary-165 {
+  color: #fff;
+  background-color: #ea4335 !important;
 }
